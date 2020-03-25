@@ -2,6 +2,7 @@ package hu.Lessmas.costumers;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -47,11 +48,18 @@ class FileReader {
 class FileWriter{
 
     static void WriteFile(List<String[]> adatok,File f) throws IOException {
+        String[] costumer;
         BufferedWriter bw = new BufferedWriter(
                 new java.io.FileWriter(f,true));
+        Iterator<String[]> it = adatok.iterator();
+        while(it.hasNext()){
+        costumer=it.next();
         String s="";
+        for(int i=0;i<costumer.length;i++){
+        s+=costumer[i]+",";}
+        s=s.substring(0,s.length()-1);
         bw.write(s);
-        bw.newLine();
+        bw.newLine();}
         bw.close();
     }
 
