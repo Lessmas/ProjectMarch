@@ -8,9 +8,6 @@ import java.util.*;
 public class CostumerSort {
     private static FileReader fr=new FileReader();
     private static FileWriter fw=new FileWriter();
-    private static SortType1 st1=new SortType1();
-    private static SortType2 st2=new SortType2();
-    private static SortType3 st3=new SortType3();
     private static List<Costumer> costumers=new ArrayList<>();
     private static String frstrow;
 
@@ -89,24 +86,6 @@ class FileWriter{
 
 }
 
-class SortType1{
-    public List<String[]> rendez(List<String[]> adatok){
-        List<String[]> adatok2=new ArrayList<>();
-        return adatok2;
-    }
-}
-class SortType2{
-    public List<String[]> rendez(List<String[]> adatok){
-        List<String[]> adatok2=new ArrayList<>();
-        return adatok2;
-    }
-}
-class SortType3{
-    public List<String[]> rendez(List<String[]> adatok) {
-        List<String[]> adatok2 = new ArrayList<>();
-        return adatok2;
-    }
-}
 class Costumer implements Comparable{
     private String name,aname,szh,szla;
     private Date szd,szny;
