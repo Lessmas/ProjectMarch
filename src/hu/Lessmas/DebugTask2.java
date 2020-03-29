@@ -28,163 +28,231 @@ public class DebugTask2 {
 class OsztalyteremFoglalas2020 {
 
     public List<Integer> foglal(Honap honap, List<Nap> napok) {
-        if (honap == Honap.Januar) {
-            return osszegyujtJanuar(honap.getNapok(), napok);
+        if (honap == Honap.Szeptember||honap==Honap.December) {
+            return osszegyujtK1(honap.getNapok(), napok);                           //kedd
+
         }
-        if (honap == Honap.Februar) {
-            return osszegyujtFebruar(honap.getNapok(), napok);
+        if (honap == Honap.Januar||honap==Honap.Aprilis||honap==Honap.Julius) {
+            return osszegyujtSze1(honap.getNapok(), napok);                         //szerda
+
         }
-        return osszegyujtOktober(honap.getNapok(), napok);
+        if (honap == Honap.Oktober) {
+            return osszegyujtCs1(honap.getNapok(), napok);                          //csütörtök
+
+        }
+        if (honap == Honap.Majus) {
+            return osszegyujtP1(honap.getNapok(), napok);                          //péntek
+
+        }
+        if (honap == Honap.Februar||honap==Honap.Augusztus) {
+            return osszegyujtSzo1(honap.getNapok(), napok);                        //szombat
+
+        }
+        if (honap == Honap.Marcius||honap==Honap.November) {
+            return osszegyujtV1(honap.getNapok(), napok);                          //vasárnap
+
+        }
+
+        return osszegyujtH1(honap.getNapok(), napok);
 
     }
 
 
-    private List<Integer> osszegyujtOktober(int max, List<Nap> napok) {
+    private List<Integer> osszegyujtH1(int max, List<Nap> napok) {
         List datumok = new ArrayList();
         for (int i=1; i<=max; i++) {
-            if (i % 7 == 1) {
-                if (napok.contains(Nap.Csutortok)) {
+            if (i % 7 == 1 && napok.contains(Nap.Hetfo)) {
                     datumok.add(i);
-                }
             }
-
-            if (i % 7 == 2) {
-                if (napok.contains(Nap.Pentek)) {
+            if (i % 7 == 2 && napok.contains(Nap.Kedd)) {
                     datumok.add(i);
-                }
             }
-
-            if (i % 7 == 3) {
-                if (napok.contains(Nap.Szombat)) {
+            if (i % 7 == 3 && napok.contains(Nap.Szerda)) {
                     datumok.add(i);
-                }
             }
-
-            if (i % 7 == 4) {
-                if (napok.contains(Nap.Vasarnap)) {
+            if (i % 7 == 4 && napok.contains(Nap.Csutortok)) {
                     datumok.add(i);
-                }
             }
-
-            if (i % 7 == 5) {
-                if (napok.contains(Nap.Hetfo)) {
+            if (i % 7 == 5 && napok.contains(Nap.Pentek)) {
                     datumok.add(i);
-                }
             }
-
-            if (i % 7 == 6) {
-                if (napok.contains(Nap.Kedd)) {
+            if (i % 7 == 6 && napok.contains(Nap.Szombat)) {
                     datumok.add(i);
-                }
             }
-
-            if (i % 7 == 0) {
-                if (napok.contains(Nap.Szerda)) {
+            if (i % 7 == 0 && napok.contains(Nap.Vasarnap)) {
                     datumok.add(i);
-                }
             }
         }
-
-        return datumok;
-    }
-    private List<Integer> osszegyujtJanuar(int max, List<Nap> napok) {
-        List datumok = new ArrayList();
-        for (int i=1; i<=max; i++) {
-            if (i % 7 == 1) {
-                if (napok.contains(Nap.Szerda)) {
-                    datumok.add(i);
-                }
-            }
-
-            if (i % 7 == 2) {
-                if (napok.contains(Nap.Csutortok)) {
-                    datumok.add(i);
-                }
-            }
-
-            if (i % 7 == 3) {
-                if (napok.contains(Nap.Pentek)) {
-                    datumok.add(i);
-                }
-            }
-
-            if (i % 7 == 4) {
-                if (napok.contains(Nap.Szombat)) {
-                    datumok.add(i);
-                }
-            }
-
-            if (i % 7 == 5) {
-                if (napok.contains(Nap.Vasarnap)) {
-                    datumok.add(i);
-                }
-            }
-
-            if (i % 7 == 6) {
-                if (napok.contains(Nap.Hetfo)) {
-                    datumok.add(i);
-                }
-            }
-
-            if (i % 7 == 0) {
-                if (napok.contains(Nap.Kedd)) {
-                    datumok.add(i);
-                }
-            }
-        }
-
-        return datumok;
-    }
-    private List<Integer> osszegyujtFebruar(int max, List<Nap> napok) {
-        List datumok = new ArrayList();
-        for (int i=1; i<=max; i++) {
-            if (i % 7 == 1) {
-                if (napok.contains(Nap.Szombat)) {
-                    datumok.add(i);
-                }
-            }
-
-            if (i % 7 == 2) {
-                if (napok.contains(Nap.Vasarnap)) {
-                    datumok.add(i);
-                }
-            }
-
-            if (i % 7 == 3) {
-                if (napok.contains(Nap.Hetfo)) {
-                    datumok.add(i);
-                }
-            }
-
-            if (i % 7 == 4) {
-                if (napok.contains(Nap.Kedd)) {
-                    datumok.add(i);
-                }
-            }
-
-            if (i % 7 == 5) {
-                if (napok.contains(Nap.Szerda)) {
-                    datumok.add(i);
-                }
-            }
-
-            if (i % 7 == 6) {
-                if (napok.contains(Nap.Csutortok)) {
-                    datumok.add(i);
-                }
-            }
-
-            if (i % 7 == 0) {
-                if (napok.contains(Nap.Pentek)) {
-                    datumok.add(i);
-                }
-            }
-        }
-
         return datumok;
     }
 
+    private List<Integer> osszegyujtK1(int max, List<Nap> napok) {
+        List datumok = new ArrayList();
+        for (int i=1; i<=max; i++) {
+            if (i % 7 == 1 && napok.contains(Nap.Kedd)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 2 && napok.contains(Nap.Szerda)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 3 && napok.contains(Nap.Csutortok)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 4 && napok.contains(Nap.Pentek)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 5 && napok.contains(Nap.Szombat)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 6 && napok.contains(Nap.Vasarnap)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 0 && napok.contains(Nap.Hetfo)) {
+                datumok.add(i);
+            }
+        }
+        return datumok;
+    }
 
+    private List<Integer> osszegyujtSze1(int max, List<Nap> napok) {
+        List datumok = new ArrayList();
+        for (int i=1; i<=max; i++) {
+            if (i % 7 == 1 && napok.contains(Nap.Szerda)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 2 && napok.contains(Nap.Csutortok)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 3 && napok.contains(Nap.Pentek)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 4 && napok.contains(Nap.Szombat)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 5 && napok.contains(Nap.Vasarnap)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 6 && napok.contains(Nap.Hetfo)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 0 && napok.contains(Nap.Kedd)) {
+                datumok.add(i);
+            }
+        }
+        return datumok;
+    }
+
+    private List<Integer> osszegyujtCs1(int max, List<Nap> napok) {
+        List datumok = new ArrayList();
+        for (int i=1; i<=max; i++) {
+            if (i % 7 == 1 && napok.contains(Nap.Csutortok)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 2 && napok.contains(Nap.Pentek)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 3 && napok.contains(Nap.Szombat)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 4 && napok.contains(Nap.Vasarnap)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 5 && napok.contains(Nap.Hetfo)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 6 && napok.contains(Nap.Kedd)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 0 && napok.contains(Nap.Szerda)) {
+                datumok.add(i);
+            }
+        }
+        return datumok;
+    }
+
+    private List<Integer> osszegyujtP1(int max, List<Nap> napok) {
+        List datumok = new ArrayList();
+        for (int i=1; i<=max; i++) {
+            if (i % 7 == 1 && napok.contains(Nap.Pentek)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 2 && napok.contains(Nap.Szombat)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 3 && napok.contains(Nap.Vasarnap)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 4 && napok.contains(Nap.Hetfo)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 5 && napok.contains(Nap.Kedd)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 6 && napok.contains(Nap.Szerda)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 0 && napok.contains(Nap.Csutortok)) {
+                datumok.add(i);
+            }
+        }
+        return datumok;
+    }
+
+    private List<Integer> osszegyujtSzo1(int max, List<Nap> napok) {
+        List datumok = new ArrayList();
+        for (int i=1; i<=max; i++) {
+            if (i % 7 == 1 && napok.contains(Nap.Szombat)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 2 && napok.contains(Nap.Vasarnap)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 3 && napok.contains(Nap.Hetfo)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 4 && napok.contains(Nap.Kedd)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 5 && napok.contains(Nap.Szerda)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 6 && napok.contains(Nap.Csutortok)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 0 && napok.contains(Nap.Pentek)) {
+                datumok.add(i);
+            }
+        }
+        return datumok;
+    }
+
+    private List<Integer> osszegyujtV1(int max, List<Nap> napok) {
+        List datumok = new ArrayList();
+        for (int i=1; i<=max; i++) {
+            if (i % 7 == 1 && napok.contains(Nap.Vasarnap)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 2 && napok.contains(Nap.Hetfo)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 3 && napok.contains(Nap.Kedd)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 4 && napok.contains(Nap.Szerda)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 5 && napok.contains(Nap.Csutortok)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 6 && napok.contains(Nap.Pentek)) {
+                datumok.add(i);
+            }
+            if (i % 7 == 0 && napok.contains(Nap.Szombat)) {
+                datumok.add(i);
+            }
+        }
+        return datumok;
+    }
 }
 
 enum Honap {
